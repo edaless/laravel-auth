@@ -11,6 +11,7 @@
                 {{ $project -> name }}
             </a>
             
+            
         </li>
     @endforeach
 </ul>

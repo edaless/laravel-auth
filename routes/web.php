@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MainController;
 
-Route::get('/', [MainController::class, 'home']);
+Route::get('/', [MainController::class, 'home'])->name('home');
 Route::middleware(['auth', 'verified'])
     ->name('private.')
     ->prefix('private')
@@ -23,10 +23,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+// show
 Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
     ->name('project.show');
 
+
+// delete
+Route::get('/project/delete/{project}', [MainController::class, 'projectDelete'])
+    ->name('project.delete');
 
 
 require __DIR__ . '/auth.php';
