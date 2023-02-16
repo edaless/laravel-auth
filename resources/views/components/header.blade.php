@@ -32,10 +32,12 @@
                     @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    
                     </li>
                     @endif
                     @else
@@ -50,6 +52,7 @@
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
+                            <a class="dropdown-item" href="/private">area privata</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

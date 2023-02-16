@@ -23,4 +23,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
+    ->name('project.show');
+
+
+
 require __DIR__ . '/auth.php';
