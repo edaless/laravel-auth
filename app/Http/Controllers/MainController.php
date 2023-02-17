@@ -18,17 +18,28 @@ class MainController extends Controller
     {
         $projects = Project::all();
 
-        // $data = [
-        //     'projects' => $projects
-        // ];
-
         return view('pages.private-home', compact('projects'));
-
-        // return view('pages.private-home');
     }
     public function projectShow(Project $project)
     {
 
         return view('pages.projectShow', compact('project'));
+    }
+    public function create()
+    {
+
+        return view('pages.project.create');
+    }
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|min:1|max:64|unique:projects',
+            'description' => 'nullable|string',
+            'main_image' => 'required|string',
+            'release_date' => 'required|date|before:today',
+            'repo_link' => 'required|string|unique:projects'
+        ]);
+        dd($data);
+        // return view('pages.project.store');
     }
 }

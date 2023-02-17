@@ -52,7 +52,7 @@
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            <a class="dropdown-item" href="/private">area privata</a>
+                            
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

@@ -3,7 +3,7 @@
 @section('content')
     
     <h1>projects</h1>
-    <a href="{{route('admin.project.create')}}">
+    <a href="{{route('admin.project.store')}}">
         CREATE A NEW PROJECT
     </a>
     <ul>
