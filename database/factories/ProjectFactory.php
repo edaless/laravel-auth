@@ -10,13 +10,13 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->words(3, true),
+            'name' => fake()->unique()->words(rand(1, 5), true),
             'description' => fake()->boolean()
                 ? fake()->paragraph()
                 : null,
-            'main_image' => fake()->imageUrl(480, 480, 'animals', true),
+            'main_image' => fake()->unique()->imageUrl(480, 480, 'animals', true),
             'release_date' => fake()->date(),
-            'repo_link' => fake()->url(),
+            'repo_link' => fake()->unique()->url(),
         ];
     }
 }

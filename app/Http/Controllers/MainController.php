@@ -10,8 +10,9 @@ class MainController extends Controller
 {
     public function home()
     {
+        $projects = Project::all();
 
-        return view('pages.home');
+        return view('pages.home', compact('projects'));
     }
     public function privateHome()
     {

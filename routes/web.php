@@ -7,30 +7,29 @@ use App\Http\Controllers\MainController;
 
 Route::get('/', [MainController::class, 'home'])->name('home');
 Route::middleware(['auth', 'verified'])
-    ->name('private.')
-    ->prefix('private')
+    ->name('admin.')
+    ->prefix('admin')
     ->group(function () {
-        Route::get('/', [MainController::class, 'privateHome']);
+        Route::get('/project/create', [MainController::class, 'create'])->name('project.create');
+        // Route::get('/', [MainController::class, 'privateHome']);
     });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 // show
 Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
     ->name('project.show');
 
 
-// delete
-Route::get('/project/delete/{project}', [MainController::class, 'projectDelete'])
-    ->name('project.delete');
+
 
 
 require __DIR__ . '/auth.php';
