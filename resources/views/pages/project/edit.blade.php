@@ -4,7 +4,7 @@
 <div class="container">
     
     <h1>CREATE</h1>
-    <form method="POST" action="{{route('admin.project.update', $project)}}">
+    <form method="POST" action="{{route('admin.project.update', $project)}}" enctype="multipart/form-data">
         @csrf    
 
         <label for="name">Name</label>
@@ -14,7 +14,7 @@
         <input type="text" name="description" value="{{$project->description}}" >
         <br>
         <label for="main_image">main image</label>
-        <input type="text" name="main_image" value="{{$project->main_image}}" >
+        <input type="file" name="main_image" value="{{$project->main_image}}" >
         <br>
         <label for="release_date">release date</label>
         <input type="date" name="release_date" value="{{$project->release_date}}" >

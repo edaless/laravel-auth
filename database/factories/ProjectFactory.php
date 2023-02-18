@@ -14,7 +14,7 @@ class ProjectFactory extends Factory
             'description' => fake()->boolean()
                 ? fake()->paragraph()
                 : null,
-            'main_image' => fake()->unique()->imageUrl(480, 480, 'animals', true),
+            // 'main_image' => fake()->unique()->imageUrl(480, 480, 'animals', true),
             'release_date' => fake()->date(),
             'repo_link' => fake()->unique()->url(),
         ];

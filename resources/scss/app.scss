@@ -1,13 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-.immagine {
+.imgHome {
     width: 100px;
     height: 100px;
+    object-fit: cover;
 }
 
 .imgShow {
     width: 300px;
     height: 300px;
+    object-fit: cover;
 
 }

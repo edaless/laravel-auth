@@ -4,7 +4,8 @@
 <div class="container">
     
     <h1>{{ $project -> name }}</h1>
-    <img src="{{ $project -> main_image }}" class="imgShow" alt="">
+    <img class="imgShow" src="{{ asset('storage/' . $project -> main_image) }}" alt="">
+    
     <p>
         {{ 
             $project -> description 

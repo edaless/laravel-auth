@@ -10,7 +10,7 @@
         @foreach ($projects as $project)
 
             <li>
-                <img src="{{$project -> main_image}}" alt=""class="immagine">
+                <img class="imgHome" src="{{ asset('storage/' . $project -> main_image) }}" alt="">
                 <br>
                 
                 <a href="{{ route('project.show', $project) }}">
