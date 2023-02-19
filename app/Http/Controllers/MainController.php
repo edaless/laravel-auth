@@ -51,7 +51,17 @@ class MainController extends Controller
             'repo_link' => 'required|string|unique:projects,repo_link',
         ]);
 
+        // versione di Giovanni
+        // $img_path = Storage::put('uploads', $data['main_image']);
+        // mia versione:
+        // salvo l'immagine nella cartella uploads dentro public
+        Storage::put('public/uploads', $data['main_image']);
+        // salvo il path senza public
         $img_path = Storage::put('uploads', $data['main_image']);
+        // il secondo storage però salva inutilmente una seconda volta l'immagine
+        // (in un'altra cartella uploads che è fuori dalla cartella public)
+
+
         $data['main_image'] = $img_path;
 
 
@@ -78,8 +88,17 @@ class MainController extends Controller
         ]);
 
 
+        // versione di Giovanni
+        // $img_path = Storage::put('uploads', $data['main_image']);
+        // mia versione:
+        // salvo l'immagine nella cartella uploads dentro public
+        Storage::put('public/uploads', $data['main_image']);
+        // salvo il path senza public
         $img_path = Storage::put('uploads', $data['main_image']);
-        // dd($img_path);
+        // il secondo storage però salva inutilmente una seconda volta l'immagine
+        // (in un'altra cartella uploads che è fuori dalla cartella public)
+
+
         $data['main_image'] = $img_path;
 
 
