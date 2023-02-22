@@ -53,7 +53,7 @@ class MainController extends Controller
 
         // versione di Giovanni
         // $img_path = Storage::put('uploads', $data['main_image']);
-
+        // mia versione con aiuto di Massimo
         $img_path = Storage::disk('public')->put('uploads', $data['main_image']);
 
 
@@ -86,7 +86,7 @@ class MainController extends Controller
 
         // versione di Giovanni
         // $img_path = Storage::put('uploads', $data['main_image']);
-
+        // mia versione con aiuto di Massimo
         $img_path = Storage::disk('public')->put('uploads', $data['main_image']);
 
 
